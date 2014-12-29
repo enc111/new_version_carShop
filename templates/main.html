@@ -1,0 +1,87 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Автосервис</title>
+  <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+     <link rel="stylesheet" type="text/css" href="{% static "css/foundation.css" %}">
+</head>
+<body>
+<font face="Verdana" size="2" color="#000000" >
+<table border="1" bordercolor="#000000" width="910" align="center" bgcolor="FFFFFF" cellspacing="0" cellpadding="10">
+    <tr>
+        <td colspan="2">
+           <div class="top-bar">
+                <section class="top-bar-section">
+
+                    <ul class="right">
+                        {% if username %}
+                            <li><a href="/auth/logout/">Выйти ({{ username }})</a></li>
+                        {% else %}
+                            <li><a href="/auth/login/">Войти</a></li>
+                        {% endif %}
+                    </ul>
+                </section>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+          <div id="menu">
+                <ul>
+                <li><a href="/cars/shop_inf/">Главная</a></li>
+                <li><a href="/cars/all/">Каталог</a></li>
+                <li><a href="#">Информация</a></li>
+                {% if username %}
+                <li><a href="#">Заказы</a></li>
+                {% endif %}
+                </ul>
+                </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="200" valign="top">
+            Навигация по сайту
+            </br><table>
+                <tr>
+                    <td>По цене</td>
+                </tr>
+                <tr>
+                    <td>По цвету</td>
+                </tr>
+                <tr>
+                    <td>По марке</td>
+                </tr>
+                <tr>
+                    <td>По модели</td>
+                </tr>
+                <tr>
+                    <td>По комплектации</td>
+                </tr>
+            </table>
+
+        </td>
+
+        <td>
+
+        {% block car_all %}{% endblock %}
+        {% block  login %}{% endblock %}
+            {% block car %}{% endblock %}
+            <table aligh="center" border="0"><tr><td>
+        {% block car1%}{% endblock %}
+        </td></tr></table>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            footer
+        </td>
+    </tr>
+</table>
+</font>
+</table>
+</body>
+</html>
