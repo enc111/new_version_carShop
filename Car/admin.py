@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Car.models import Car, Dealer, Model, Marks, Comments
+from Car.models import Car, Dealer, Model, Mark, Comments
 from checkup.models import Checkup, TypeOfService
 from testdrive.models import Testdrive
 from order.models import Order
@@ -19,7 +19,7 @@ class CarAdmin(admin.ModelAdmin):
 admin.site.register(Car, CarAdmin)
 admin.site.register(Dealer)
 admin.site.register(Model)
-admin.site.register(Marks)
+admin.site.register(Mark)
 admin.site.register(Comments)
 admin.site.register(Checkup)
 admin.site.register(TypeOfService)

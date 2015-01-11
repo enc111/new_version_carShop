@@ -15,23 +15,24 @@ class Dealer(models.Model):
         return self.dealer_address
 
 
-class Marks(models.Model):
+class Mark(models.Model):
     class Meta:
         db_table = "mark"
-    marks_name = models.CharField(max_length=300)
+    name = models.CharField(max_length=300)
 
     def __unicode__(self):
-        return self.marks_name
+        return self.name
 
 
 class Model(models.Model):
     class Meta:
         db_table = "model"
 
-    model_name = models.CharField(max_length=300)
+    name = models.CharField(max_length=100)
+    mark = models.ForeignKey(Mark)
 
-    def __unicode__(self):
-        return self.model_name
+    def __str__(self):
+        return '{} {}'.format(self.mark, self.name)
 
 # -*-class Components(models.Model):
  #   class Meta:
@@ -56,14 +57,14 @@ class Car(models.Model):
         (COMPLECTATION_MAX, 'Максимальная'),
     )
 
-    car_price = models.CharField(max_length=300)
-    car_description = models.TextField()
-    car_color = models.CharField(max_length=300)
-    car_mark = models.ForeignKey(Marks)
-    car_model = models.ForeignKey(Model)
-    car_dealer = models.ForeignKey(Dealer)
-    car_man_year = models.IntegerField()
-    car_complectation = models.CharField(max_length=25, choices=COMPLECTATION_CHOICES)
+    price = models.CharField(max_length=300)
+    description = models.TextField()
+    color = models.CharField(max_length=300)
+    mark = models.ForeignKey(Mark)
+    model = models.ForeignKey(Model)
+    dealer = models.ForeignKey(Dealer)
+    man_year = models.IntegerField()
+    complectation = models.CharField(max_length=25, choices=COMPLECTATION_CHOICES)
     car_img = models.ImageField()
 
 
