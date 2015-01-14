@@ -6,17 +6,17 @@
 </head>
 <body>
 <img src="{{  n.car_img.name }}" width="185" height="185" alt="" class="leftimg">
-    <h5>Марка:{{ car.car_mark }}</h5>
-    <h5>Цена:{{ car.car_price }}</h5>
-    <h5>Цвет:{{ car.car_color }}</h5>
-    <h5>Модель:{{ car.car_model }}</h5>
-    <h5>Дилер:{{ car.car_dealer }}</h5>
-    <h5>Комплектация:{{ car.car_components }}</h5>
-    <h5>Описание:</h5>{{ car.car_description }}
+    <h5>Марка:{{ car.mark }}</h5>
+    <h5>Цена:{{ car.price }}</h5>
+    <h5>Цвет:{{ car.color }}</h5>
+    <h5>Модель:{{ car.model }}</h5>
+    <h5>Дилер:{{ car.dealer }}</h5>
+    <h5>Комплектация:{{ car.components }}</h5>
+    <h5>Описание:</h5>{{ car.description }}
     <hr>
     <h3>Коментарии:</h3>
     {% for n in comments %}
-    <p>{{ n.comments_user }}:{{ n.comments_text }} </p>
+    <p>{{ n.comments_user }}:{{ n.ctext }} </p>
     {% endfor %}
     <form action="/cars/add_comments/{{ car.id }}/" method="post">
     {% csrf_token %}

@@ -57,7 +57,7 @@ class Car(models.Model):
         (COMPLECTATION_MAX, 'Максимальная'),
     )
 
-    price = models.CharField(max_length=300)
+    price = models.DecimalField(decimal_places=2, max_digits=12)
     description = models.TextField()
     color = models.CharField(max_length=300)
     mark = models.ForeignKey(Mark)
@@ -72,5 +72,5 @@ class Comments(models.Model):
     class Meta:
         db_table = "comments"
 
-    comments_text = models.TextField(verbose_name="Комментарий")
+    ctext = models.TextField(verbose_name="Комментарий")
     comments_car = models.ForeignKey(Car)

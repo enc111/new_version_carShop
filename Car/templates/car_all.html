@@ -6,7 +6,7 @@
 {% for n in form %}
     <figure>
         <img src="{{ MEDIA_URL }}{{ n.car_img.name }}" width="96" height="96" alt="">
-        <figcaption>{{ n.car_model}}<span><a href="/cars/get/{{ n.id }}/">{{ n.car_mark }}</a></span></figcaption>
+        <figcaption>{{ n.model}}<span><a href="/cars/get/{{ n.id }}/">{{ n.mark }}</a></span></figcaption>
     </figure>
 
 {% endfor %}
