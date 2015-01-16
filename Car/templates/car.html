@@ -16,7 +16,7 @@
     {% endfor %}
 {% endblock %}
 {% block car1%}
-<form action="/car/add_comments/{{ car.id }}/" method="post">
+<form action="/cars/add_comments/{{ car.id }}/" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" class="button" value="Добавить">

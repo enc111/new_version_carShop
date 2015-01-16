@@ -24,7 +24,7 @@ class Mark(models.Model):
         return self.name
 
 
-class Model(models.Model):
+class Model_(models.Model):
     class Meta:
         db_table = "model"
 
@@ -61,7 +61,7 @@ class Car(models.Model):
     description = models.TextField()
     color = models.CharField(max_length=300)
     mark = models.ForeignKey(Mark)
-    model = models.ForeignKey(Model)
+    model = models.ForeignKey(Model_)
     dealer = models.ForeignKey(Dealer)
     man_year = models.IntegerField()
     complectation = models.CharField(max_length=25, choices=COMPLECTATION_CHOICES)
