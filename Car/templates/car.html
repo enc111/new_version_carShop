@@ -1,12 +1,12 @@
 {% extends "main.html" %}
 {% block car%}
     <img src="{{ MEDIA_URL }}{{ n.car_img.name }}" width="185" height="185" alt="" class="leftimg">
-    <h5>Марка:{{ car.mark }}</h5>
+    <h5>Марка:{{ car.mark.name }}</h5>
     <h5>Цена:{{ car.price }}</h5>
     <h5>Цвет:{{ car.color }}</h5>
-    <h5>Модель:{{ car.model }}</h5>
-    <h5>Дилер:{{ car.dealer }}</h5>
-    <h5>Комплектация:{{ car.components }}</h5>
+    <h5>Модель:{{ car.model.name }}</h5>
+    <h5>Дилер:{{ car.dealer.address }}</h5>
+    <h5>Комплектация:{{ car.complectation }}</h5>
     <h5>Описание:</h5>{{ car.description }}
     <hr>
     <h3>Комментарии:</h3>

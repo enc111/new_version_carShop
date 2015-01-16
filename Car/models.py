@@ -8,11 +8,11 @@ class Dealer(models.Model):
     class Meta:
         db_table = "dealer"
 
-    dealer_address = models.CharField(max_length=300)
-    dealer_country = models.CharField(max_length=300)
+    address = models.CharField(max_length=300)
+    country = models.CharField(max_length=300)
 
     def __unicode__(self):
-        return self.dealer_address
+        return self.address
 
 
 class Mark(models.Model):
