@@ -11,7 +11,7 @@ class Dealer(models.Model):
     address = models.CharField(max_length=300)
     country = models.CharField(max_length=300)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.address
 
 
@@ -20,8 +20,8 @@ class Mark(models.Model):
         db_table = "mark"
     name = models.CharField(max_length=300)
 
-    def __unicode__(self):
-        return self.name
+    def __str__(self):
+        return self.name#
 
 
 class Model_(models.Model):
