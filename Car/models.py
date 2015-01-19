@@ -3,7 +3,6 @@ from django.db import models
 #from django.contrib.auth.models import User
 # Create your models here.
 
-
 class Dealer(models.Model):
     class Meta:
         db_table = "dealer"
@@ -21,7 +20,7 @@ class Mark(models.Model):
     name = models.CharField(max_length=300)
 
     def __str__(self):
-        return self.name#
+        return self.name
 
 
 class Model_(models.Model):
