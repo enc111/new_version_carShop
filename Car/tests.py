@@ -13,14 +13,22 @@ class ModelTest(TestCase):
         )
 
 
-
 class CommentsTest(TestCase):
     def test_add_comment_view(self):
         mark1 = Mark.objects.create(name='mark1')
         model = Model_.objects.create(name='model1', mark=mark1)
         dealer = Dealer.objects.create(address='address', country='country1')
-        car = Car.objects.create(price=23.00, description='the best car', color='black', mark=mark1, model=model,
-                                 dealer=dealer, man_year=1990, complectation=Car.COMPLECTATION_BASE, car_img='win.png')
+        car = Car.objects.create(
+            price=23.00,
+            description='the best car',
+            color='black',
+            mark=mark1,
+            model=model,
+            dealer=dealer,
+            man_year=1990,
+            complectation=Car.COMPLECTATION_BASE,
+            car_img='win.png'
+        )
         data = dict(ctext='test comment')
         self.client.post(reverse('add_comment', kwargs=dict(car_id=car.id)), data=data)
         comment = Comments.objects.get()

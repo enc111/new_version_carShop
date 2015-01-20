@@ -2,7 +2,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 from Car.models import Car
-# Create your models here.
+
+
 class Order(models.Model):
     class Meta:
         db_table = "order"
@@ -22,6 +23,9 @@ class Order(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
     date_completed = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES)
+
+    #def __str__(self):
+       # return self.status
 
     def confirm(self):
         self.status = self.STATUS_CONFIRMED
