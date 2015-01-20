@@ -1,6 +1,6 @@
 __author__ = 'KATE'
 from django.forms import ModelForm
-from logsys.models import Registratin
+from django.contrib.auth.models import User
 from .models import Comments
 
 
@@ -12,4 +12,4 @@ class CommentForm(ModelForm):
 
 class Registration(ModelForm):
     class Meta:
-        model = Registratin
+        model = User

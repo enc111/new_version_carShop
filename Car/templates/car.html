@@ -11,8 +11,8 @@
     <hr>
     <h3>Комментарии:</h3>
 
-    {% for n in comments %}
-    <p>{{ n.comments_user }}:{{ n.ctext }} </p>
+    {% for comments in comments %}
+    <p>{{ username }}:{{ comments.ctext }} </p>
     {% endfor %}
 {% endblock %}
 {% block car1%}

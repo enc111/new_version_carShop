@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django.db import models
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Dealer(models.Model):
@@ -73,3 +73,4 @@ class Comments(models.Model):
 
     ctext = models.TextField(verbose_name="Комментарий")
     comments_car = models.ForeignKey(Car)
+
