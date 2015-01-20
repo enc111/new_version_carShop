@@ -19,7 +19,9 @@
 <form action="/cars/add_comments/{{ car.id }}/" method="post">
     {% csrf_token %}
     {{ form }}
-    <input type="submit" class="button" value="Добавить">
+    <input type="submit" class="button" value="Добавить комментарий">
+    <input type="submit" class="button" value="Добавить в корзину">
+
 
     </form>
 {% endblock %}
