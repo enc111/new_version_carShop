@@ -26,7 +26,7 @@ def car(request, car_id=1):
     args['comments'] = Comments.objects.filter(comments_car_id=car_id)
     args['form'] = comments_form
     args['username'] = auth.get_user(request).username
-    return render_to_response('car.html', args)
+    return render_to_response('car.html', args, context_instance=RequestContext(request))
 
 
 def shop_inf(request):

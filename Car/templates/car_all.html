@@ -3,10 +3,10 @@
 {% load staticfiles %}
 {% block car_all %}
 <div>
-{% for n in form %}
+{% for car in form %}
     <figure>
-        <img src="{{ MEDIA_URL }}{{ n.car_img.name }}" width="96" height="96" alt="">
-        <figcaption>{{ n.model}}<span><a href="/cars/get/{{ n.id }}/">{{ n.mark }}</a></span></figcaption>
+        <img src="{{ MEDIA_URL }}{{ car.car_img.name }}" width="96" height="96" alt="">
+        <figcaption>{{ car.model}}<span><a href="/cars/get/{{ car.id }}/">{{ car.mark }}</a></span></figcaption>
     </figure>
 
 {% endfor %}
