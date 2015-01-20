@@ -3,6 +3,17 @@ from django.test import TestCase
 from Car.models import Car, Comments, Model_, Mark, Dealer
 
 
+class ModelTest(TestCase):
+    def test_model_name(self):
+        mark1 = Mark.objects.create(name='mark1')
+        model = Model_.objects.create(name='model1', mark=mark1)
+        self.assertEqual(
+            model.__str__(),
+            'mark1 model1', "Incorrect name of model"
+        )
+
+
+
 class CommentsTest(TestCase):
     def test_add_comment_view(self):
         mark1 = Mark.objects.create(name='mark1')
