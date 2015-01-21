@@ -21,3 +21,8 @@ class Checkup(models.Model):
     car_man_year = models.ForeignKey(Car)
     user = models.ForeignKey(User)
     type_of_service = models.ForeignKey(TypeOfService)
+
+    @property
+    def price(self):
+        return self.type_of_service.price
+
