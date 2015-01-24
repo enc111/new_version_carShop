@@ -20,7 +20,7 @@ class OrderTest(TestCase):
         dealer = Dealer.objects.create(address='address', country='country1')
         car = Car.objects.create(
             price=23.00,
-            description='the best car',
+            description='the best c',
             color='black',
             mark=mark1,
             model=model,
